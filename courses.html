@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+  <meta
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    name="viewport"
+  />
+
+  <title>Courses | Masterclass Template</title>
+
+  <meta property="og:title" content="Courses | Masterclass Template" />
+
+  <meta property="og:locale" content="en_US" />
+
+  <link
+    rel="canonical"
+    href="https://masterclass.tailwindmade.com/courses"
+  />
+
+  <meta
+    property="og:url"
+    content="https://masterclass.tailwindmade.com/courses"
+  />
+
+  <meta
+    name="description"
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  />
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+
+  <meta property="og:site_name" content="Masterclass Template" />
+
+  <meta property="og:image" content="https://masterclass.tailwindmade.com/assets/img/social.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:site" content="@tailwindmade" />
+
+  <link
+    crossorigin="crossorigin"
+    href="https://fonts.gstatic.com"
+    rel="preconnect"
+  />
+
+  <link
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="preload"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+  />
+
+  <link
+    crossorigin="anonymous"
+    href="/assets/styles/main.min.css"
+    media="screen"
+    rel="stylesheet"
+  />
+
+  <!--Magic Help for Alpine Js V3-->
+  <script
+    src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
+    defer
+  ></script>
+
+  <!--Alpine Js V3-->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <!-- Splide's Styles  -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css"
+  />
+</head>
+
+
+  <body class="">
+    
+    <div
+      id="main"
+      x-data="{ mobileMenu: false }"
+      class="relative"
+      :class="{ 'max-h-screen overflow-hidden' : mobileMenu }"
+    >
+      <div
+  x-data="{
+    isCartOpen: false
+}"
+>
+  <div
+     class="relative bg-cover bg-bottom bg-no-repeat" style="background-image: url(/assets/img/bg-cta-desktop.jpg)" 
+  >
+    <div class="bg-dark absolute inset-0 w-full"></div>
+    <div class="relative z-40">
+      <div class="container flex items-center justify-between py-4">
+        <a href="/">
+          <img
+            src="/assets/img/logo.svg"
+            class="h-14 w-14 xl:h-16 xl:w-16"
+            alt="logo"
+          />
+        </a>
+
+        <div class="flex">
+          <ul class="hidden items-center justify-between pt-1 lg:flex">
+             
+            <li class="border-white py-1 ml-8 hover:border-b">
+              <a
+                href="/#about-us"
+                class="font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+                >About Us</a
+              >
+            </li>
+              
+            <li class="border-white py-1 ml-8 hover:border-b">
+              <a
+                href="/#advantages"
+                class="font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+                >Advantages</a
+              >
+            </li>
+              
+            <li class="border-white py-1 ml-8 hover:border-b">
+              <a
+                href="/courses"
+                class="font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+                >Courses</a
+              >
+            </li>
+              
+            <li class="border-white py-1 ml-8 hover:border-b">
+              <a
+                href="/blog"
+                class="font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+                >Blog</a
+              >
+            </li>
+              
+            <li class="border-white py-1 ml-8 hover:border-b">
+              <a
+                href="/contact"
+                class="font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+                >Contact</a
+              >
+            </li>
+             
+          </ul>
+          <div class="flex items-center">
+            <span class="lg:hidden" @click="mobileMenu = true">
+              <i class="bx bx-menu pr-1 text-2xl text-white md:text-3xl"></i>
+            </span>
+
+            <a
+              href="/search"
+              class="flex items-center pl-4"
+            >
+              <i
+                class="bx bx-search-alt text-white text-xl px-2"
+              ></i>
+            </a>
+
+            <div
+              class="hover:shadow-xs group relative ml-5 flex items-center rounded-full bg-primary px-2 py-1 shadow transition duration-300 hover:bg-white"
+            >
+              <span class="cursor-pointer" @click="isCartOpen = !isCartOpen">
+                <i
+                  class="bx bxs-cart-alt text-white group-hover:text-secondary text-xl"
+                ></i>
+              </span>
+
+              <div
+                class="pointer-events-none absolute right-0 top-16 mr-0 w-72 opacity-0 transition-opacity sm:mr-3 md:w-100 xl:mr-0"
+                :class="{ 'pointer-events-auto !opacity-100': isCartOpen }"
+              >
+                <div class="rounded-lg shadow-xl">
+                  <div class="rounded-t-lg bg-white py-8 px-8 text-center">
+                    
+                    <div
+                      class="relative mt-4 flex items-center justify-between border-b border-neutrals-l03 pb-4 text-left"
+                    >
+                      <div class="w-3/5">
+                        <a
+                          href="/product"
+                          class="inline-block border-b border-white font-body text-sm font-medium text-neutrals-g03 hover:border-neutrals-g01"
+                          >How to read more books</a
+                        >
+                        <span
+                          class="block pt-1 font-body text-sm text-neutrals-g03"
+                        >
+                          $10.00</span
+                        >
+                      </div>
+                      <div
+                        class="absolute right-0 top-0 -mt-2 -mr-2 flex h-5 w-5 items-center justify-center rounded-full bg-neutrals-g03 text-xl text-white shadow-md"
+                      >
+                        <i class="bx bx-x"></i>
+                      </div>
+                      <a
+                        href="/product"
+                        class="border border-neutrals-l03 shadow"
+                      >
+                        <img
+                          src="/assets/img/product-01.jpg"
+                          class="h-14 w-14 object-cover"
+                          alt="template"
+                        />
+                      </a>
+                    </div>
+                    
+                    <div
+                      class="relative mt-4 flex items-center justify-between border-b border-neutrals-l03 pb-4 text-left"
+                    >
+                      <div class="w-3/5">
+                        <a
+                          href="/product"
+                          class="inline-block border-b border-white font-body text-sm font-medium text-neutrals-g03 hover:border-neutrals-g01"
+                          >Excel for beginners</a
+                        >
+                        <span
+                          class="block pt-1 font-body text-sm text-neutrals-g03"
+                        >
+                          $20.00</span
+                        >
+                      </div>
+                      <div
+                        class="absolute right-0 top-0 -mt-2 -mr-2 flex h-5 w-5 items-center justify-center rounded-full bg-neutrals-g03 text-xl text-white shadow-md"
+                      >
+                        <i class="bx bx-x"></i>
+                      </div>
+                      <a
+                        href="/product"
+                        class="border border-neutrals-l03 shadow"
+                      >
+                        <img
+                          src="/assets/img/product-02.jpg"
+                          class="h-14 w-14 object-cover"
+                          alt="template"
+                        />
+                      </a>
+                    </div>
+                    
+                    <div class="flex justify-between py-4">
+                      <span
+                        class="font-body text-lg font-semibold text-neutrals-g03"
+                        >Total</span
+                      >
+                      <span
+                        class="font-body text-lg font-semibold text-neutrals-g03"
+                        >$30.00</span
+                      >
+                    </div>
+                    <div class="flex justify-end pt-3">
+                      <a
+                        href="/"
+                        class="inline-block rounded-full bg-gradient-to-r from-primary via-secondary to-primary px-10 py-4 font-body text-sm font-bold uppercase tracking-wider text-white shadow hover:text-purple hover:shadow-md"
+                        >Checkout</a
+                      >
+                    </div>
+                  </div>
+                  <div class="rounded-b-lg bg-blue px-16 py-5 text-center">
+                    <span
+                      class="block font-body text-sm font-semibold tracking-wide text-white"
+                      >Get 30% off if you buy 3+ courses</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-70 opacity-0 transition-opacity"
+  :class="{ 'pointer-events-auto !opacity-100' : mobileMenu }"
+>
+  <div class="ml-auto min-h-screen w-2/3 bg-white sm:w-1/2">
+    <div class="flex justify-end p-8">
+      <span @click="mobileMenu = false">
+        <i class="bx bx-x text-3xl text-secondary"></i>
+      </span>
+    </div>
+    <ul class="px-8">
+      
+      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+        <a
+          href="/#about-us"
+          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+          >About Us</a
+        >
+      </li>
+      
+      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+        <a
+          href="/#advantages"
+          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+          >Advantages</a
+        >
+      </li>
+      
+      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+        <a
+          href="/courses"
+          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+          >Courses</a
+        >
+      </li>
+      
+      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+        <a
+          href="/blog"
+          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+          >Blog</a
+        >
+      </li>
+      
+      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+        <a
+          href="/contact"
+          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+          >Contact</a
+        >
+      </li>
+      
+      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+        <a
+          href="/search"
+          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+          >Search</a
+        >
+      </li>
+      
+      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+        <a
+          href="/single"
+          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+          >Single page</a
+        >
+      </li>
+      
+      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+        <a
+          href="/404.html"
+          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+          >404 Error</a
+        >
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+      <div><div class="bg-neutrals-l00">
+  <div class="container pt-10 pb-40 sm:pt-16 sm:pb-48 md:pb-36 xl:pb-40">
+    <div class="text-center">
+      <h1
+        class="font-body text-4xl font-medium text-secondary lg:text-5xl xl:text-6xl"
+      >
+        Checkout our diverse catalogue
+      </h1>
+      <div class="mx-auto sm:w-2/3">
+        <span
+          class="block pt-5 font-body text-base text-neutrals-g03 sm:text-xl"
+          >We have a big calatogue where you can find different courses for different fields, you can learn a new skill in just 1 hour. Awesome, right?</span
+        >
+      </div>
+    </div>
+    <form class="flex flex-col justify-between pt-10 md:pt-16 lg:flex-row">
+      <div class="grid grid-cols-1 gap-2 md:grid-cols-4 lg:w-3/4 xl:w-2/3">
+        <select
+          type="select"
+          id="categories"
+          class="form-select border border-secondary px-4 py-3 font-body text-base text-neutrals-g03 focus:border-secondary focus:outline-none focus:ring-0 sm:py-4 md:px-6"
+        >
+          <option>Categories</option>
+          <option>Productivity</option>
+          <option>Health & Welness</option>
+        </select>
+        <select
+          type="select"
+          id="price"
+          class="form-select border border-secondary px-4 py-3 font-body text-base text-neutrals-g03 focus:border-secondary focus:outline-none focus:ring-0 sm:py-4 md:px-6"
+        >
+          <option>Price Range</option>
+          <option>Free</option>
+          <option>US$1 - US$10</option>
+          <option>US$11 - US$20</option>
+          <option>US$21 - US$40</option>
+          <option>US$41+</option>
+        </select>
+        <select
+          type="select"
+          id="duration"
+          class="form-select border border-secondary px-4 py-3 font-body text-base text-neutrals-g03 focus:border-secondary focus:outline-none focus:ring-0 sm:py-4 md:px-6"
+        >
+          <option>Course Duration</option>
+          <option>0-3 hours</option>
+          <option>4-10 hours</option>
+          <option>11-20 hours</option>
+          <option>21+ hours</option>
+        </select>
+        <select
+          type="select"
+          id="level"
+          class="form-select border border-secondary px-4 py-3 font-body text-base text-neutrals-g03 focus:border-secondary focus:outline-none focus:ring-0 sm:py-4 md:px-6"
+        >
+          <option>Level</option>
+          <option>All levels</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+      </div>
+      <div
+        class="mt-2 flex w-full items-center justify-between border border-secondary bg-white font-body text-base text-neutrals-g03 focus:border-secondary focus:outline-none focus:ring-0 md:w-1/3 lg:mt-0 lg:ml-2 lg:w-1/4 xl:ml-0 xl:w-1/5"
+      >
+        <span class="pl-3 font-body text-neutrals-g03">Sort by:</span>
+        <select
+          type="select"
+          id="level"
+          class="form-select border-none px-4 py-3 font-body text-base text-neutrals-g03 focus:outline-none focus:ring-0 sm:py-4"
+        >
+          <option>Best Selling</option>
+          <option>Newest</option>
+          <option>Oldest</option>
+          <option>Price, low to high</option>
+          <option>Price, high to low</option>
+        </select>
+      </div>
+    </form>
+    <div class="mt-14"><div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+   
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-01.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          How to read more books
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Karen</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Productivity</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >180 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $10
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-02.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          Excel for beginners
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Dave</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Business</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >170 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $20
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-03.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          How to work out safely at home
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Paola</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Health & Wellness</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >160 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $18
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-04.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          Zoom Mastery
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Daniela</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Productivity</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >150 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $15
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-01.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          Creative Writing Introduction
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Yudelka</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Writing</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >140 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $30
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-02.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          Introduction to the terminal
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Steve</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Programming</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >130 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $10
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-03.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          Yoga for beginners
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Daniela</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Health & Welness</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >120 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $12
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-04.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          E-learning platforms - How to choose
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Gabriela</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Productivity</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >110 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $20
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+  <a
+    href="/product"
+    class="group rounded-lg border border-neutrals-l02"
+  >
+    <span
+      class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+    >
+      <span
+        class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+        style="background-image: url(/assets/img/product-01.jpg);"
+      ></span>
+      <span
+        class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+      >
+        <h4
+          class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+        >
+          Google Suite for Advanced users
+        </h4>
+        <span class="flex">
+          <span class="flex">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >by -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Erick</span
+            >
+          </span>
+          <span class="flex pl-5">
+            <span class="font-body text-sm font-medium text-neutrals-g02"
+              >in -</span
+            >
+            <span
+              class="block pl-1 font-body text-sm font-medium text-neutrals-g03"
+              >Productivity</span
+            >
+          </span>
+        </span>
+      </span>
+      <span
+        class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+      >
+        <span class="flex items-center">
+          <span class="block font-body text-sm font-medium text-neutrals-g02"
+            >100 sales</span
+          >
+          <span class="flex items-center pl-3">
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+            <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+          </span>
+        </span>
+        <h2
+          class="font-body text-3xl font-semibold tracking-wider text-secondary"
+        >
+          $10
+        </h2>
+      </span>
+    </span>
+  </a>
+  
+</div>
+
+<div class="flex items-center justify-center pt-10 sm:pt-16 xl:pt-24">
+  <span>
+  <i
+    class="bx bx-chevrons-left text-secondary hover:text-purple transition duration-300 text-2xl pr-5"
+  ></i>
+</span>
+
+<span
+  class="mr-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full px-5 py-5 text-sm font-bold text-neutrals-g03 transition duration-300 hover:bg-white hover:shadow"
+  >1
+</span>
+
+<span
+  class="mr-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full px-5 py-5 text-sm font-bold text-neutrals-g03 transition duration-300 hover:bg-white hover:shadow"
+  >2
+</span>
+
+<span
+  class="mr-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full px-5 py-5 text-sm font-bold text-neutrals-g03 transition duration-300 hover:bg-white hover:shadow"
+  >3
+</span>
+
+<span
+  class="mr-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full px-5 py-5 text-sm font-bold text-neutrals-g03 transition duration-300 hover:bg-white hover:shadow"
+  >4
+</span>
+
+<span
+  class="mr-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full px-5 py-5 text-sm font-bold text-neutrals-g03 transition duration-300 hover:bg-white hover:shadow"
+  >5
+</span>
+
+<span>
+  <i
+    class="bx bx-chevrons-right text-secondary hover:text-purple text-2xl pl-5 transition duration-300"
+  ></i>
+</span>
+
+</div>
+
+</div>
+  </div>
+</div>
+</div>
+      <div
+  class="bg-cta relative h-24 w-full bg-cover bg-bottom bg-no-repeat md:h-20 xl:h-32 2xl:h-20"
+>
+  <div class="container absolute inset-0">
+    <div
+      class="relative mx-auto -mt-28 w-full overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat sm:w-5/6 md:mx-0 md:-mt-16 md:w-full"
+      style="background-image: url(/assets/img/bg-newsletter.png);"
+    >
+      <div
+        class="absolute top-0 left-0 -mt-10 -ml-8 h-40 w-40 overflow-hidden bg-cover bg-center bg-no-repeat"
+        style="background-image: url(/assets/img/figure-ellipse.svg);"
+      ></div>
+      <div
+        class="mx-auto flex w-11/12 flex-col justify-between py-8 sm:py-10 md:flex-row lg:w-5/6 lg:py-8"
+      >
+        <div class="text-center md:text-left">
+          <span
+            class="block font-header text-3xl font-bold tracking-wider text-white lg:text-4xl"
+          >
+            Signup for
+            <span class="block leading-none md:pl-10 lg:pl-16"
+              >Our Newsletter</span
+            >
+          </span>
+        </div>
+        <form class="flex pt-6 md:w-3/5 md:pt-0 lg:w-1/2">
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your E-mail Address"
+            class="w-2/3 rounded-l-lg border-none border-white bg-white px-3 py-5 font-body text-sm font-medium text-neutrals-g03 sm:px-6 sm:text-base md:border"
+          />
+          <button
+            class="h-full w-1/3 rounded-r-lg border-2 border-white bg-gradient-to-r from-primary via-secondary to-primary px-4 py-5 font-body text-xs font-medium uppercase text-white transition duration-300 hover:text-purple focus:outline-none sm:text-sm xl:text-base"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+ <div
+  class="h-full w-full bg-cover bg-center bg-no-repeat"
+  style="background-image: url(/assets/img/bg-footer.jpg);"
+>
+  <div class="container flex flex-col justify-between py-10 lg:flex-row">
+    <div class="block lg:hidden">
+      <a href="/" class="mb-10 block">
+        <img
+          src="/assets/img/logo.svg"
+          class="relative -left-3 mx-auto xl:h-24"
+          alt="logo"
+        />
+      </a>
+    </div>
+    <div class="text-center lg:w-1/3 lg:text-left">
+      <span class="font-body text-lg font-semibold text-white"
+        >About Us</span
+      >
+      <div class="flex justify-center py-3 lg:justify-start">
+        <img
+          src="/assets/img/underline-white.svg"
+          alt="underline"
+        />
+      </div>
+      <div class="mx-auto sm:w-1/2 lg:mx-0 lg:w-full lg:pr-8">
+        <p
+          class="font-body text-sm font-medium leading-relaxed tracking-wide text-white"
+        >
+          We're a new online courses platform dedicated to serving niche audiences. With our extensive catalogue you'll be able to learn anything you want.
+        </p>
+      </div>
+      <div class="flex items-center justify-center pt-4 lg:justify-start">
+        
+        <a href="http://www.facebook.com"
+          ><i
+            class="bx bxl-facebook-square text-white opacity-100 hover:opacity-75 text-lg pr-2 transition duration-300"
+          ></i
+        ></a>
+        
+        <a href="http://www.linkedin.com"
+          ><i
+            class="bx bxl-linkedin text-white opacity-100 hover:opacity-75 text-lg pr-2 transition duration-300"
+          ></i
+        ></a>
+        
+        <a href="http://www.twitter.com"
+          ><i
+            class="bx bxl-twitter text-white opacity-100 hover:opacity-75 text-lg pr-2 transition duration-300"
+          ></i
+        ></a>
+        
+      </div>
+    </div>
+    <div class="hidden items-center lg:flex">
+      <a href="/" class="-ml-16 block">
+        <img
+          src="/assets/img/logo.svg"
+          class="xl:h-24"
+          alt="logo"
+        />
+      </a>
+    </div>
+    <div
+      class="mx-auto w-3/4 pt-8 text-center md:w-11/12 lg:mx-0 lg:w-1/3 lg:pl-8 lg:pt-0 lg:text-left"
+    >
+      <span class="font-body text-lg font-semibold text-white"
+        >Contact us</span
+      >
+      <div class="flex justify-center py-3 lg:justify-start">
+        <img
+          src="/assets/img/underline-white.svg"
+          alt="underline"
+        />
+      </div>
+      <div
+        class="mx-auto w-11/12 sm:w-2/5 md:w-1/3 md:pl-4 lg:mx-0 lg:w-full lg:pl-0"
+      >
+        <a
+          href="/"
+          class="flex pt-2 opacity-100 transition duration-300 hover:opacity-75"
+        >
+          <i
+            class="bx bxs-phone text-white text-xl pr-4"
+          ></i>
+          <p
+            class="text-left font-body text-sm font-medium leading-relaxed tracking-wide text-white"
+          >
+            +1 (366) 876-3656
+          </p>
+        </a>
+        <a
+          href="mailto:info@online-course.com"
+          class="flex items-center pt-3 opacity-100 transition duration-300 hover:opacity-75"
+        >
+          <i
+            class="bx bxs-envelope text-white text-lg pr-4"
+          ></i>
+          <p
+            class="font-body text-sm font-medium leading-relaxed tracking-wide text-white"
+          >
+            info@redpixelthemes.com
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-secondary">
+  <div
+    class="container flex flex-col items-center justify-between py-6 sm:flex-row"
+  >
+    <ul class="flex flex-col items-center sm:flex-row">
+      
+      <li class="pb-3 sm:pr-8 sm:pb-0">
+        <a
+          href="/single"
+          class="font-body text-xs font-medium tracking-wide text-white transition duration-300 hover:text-purple md:text-sm"
+          >Privacy Policy</a
+        >
+      </li>
+      
+      <li class="pb-3 sm:pr-8 sm:pb-0">
+        <a
+          href="/single"
+          class="font-body text-xs font-medium tracking-wide text-white transition duration-300 hover:text-purple md:text-sm"
+          >Terms & Conditions</a
+        >
+      </li>
+      
+    </ul>
+    <div class="pt-4 sm:pt-0">
+      <p
+        class="font-body text-xs font-medium tracking-wide text-white md:text-sm"
+      >
+        © 2021 Red Pixel Themes
+      </p>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+
+    
+
+    <!-- Splide's CDN  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
