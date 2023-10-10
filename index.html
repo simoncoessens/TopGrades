@@ -84,168 +84,195 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css"
   />
+  
+  <style>
+/* Define a custom checkmark as a green tick */
+.custom-list {
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default padding for the list */
+}
+
+.custom-list li::before {
+  content: '\2705'; /* Unicode character for a green heavy check mark (✅) */
+  color: green; /* Set the color to green */
+  display: inline-block;
+  width: 1em; /* Adjust the width as needed */
+  <!-- margin-left: 3em; /* Offset the checkmark from the list item */ -->
+}
+</style>
 </head>
 
 
-  <body class="">
+<body class="">
 
+  <div
+    id="main"
+    x-data="{ mobileMenu: false }"
+    class="relative"
+    :class="{ 'max-h-screen overflow-hidden' : mobileMenu }"
+  >
     <div
-      id="main"
-      x-data="{ mobileMenu: false }"
-      class="relative"
-      :class="{ 'max-h-screen overflow-hidden' : mobileMenu }"
-    >
-      <div
-  x-data="{
-    isCartOpen: false
+x-data="{
+  isCartOpen: false
 }"
 >
-  <div
-     class="absolute inset-0 z-20 mx-auto h-24"
-  >
-    <div class="bg-dark absolute inset-0 w-full"></div>
-    <div class="relative z-40">
-      <div class="container flex items-center justify-between py-4">
-        <a href="/">
-          <img
-            src="/assets/img/logo.svg"
-            class="h-14 w-14 xl:h-16 xl:w-16"
-            alt="logo"
-          />
-        </a>
+<div
+   class="absolute inset-0 z-20 mx-auto h-24"
+>
+  <!-- <div class="bg-dark absolute inset-0 w-full"></div>  xl:h-25 xl:w-45 class="h-9 w-9 xl:h-25 xl:w-45" -->
+  <div class="relative z-40">
+    <div class="container flex items-center justify-between py-4">
+      <a href="/">
+        <img
+          src="/assets/img/logo2.png"
+          class="h-40 xl:h-25 xl:w-45 sm:h-12 sm:w-12 md:h-16 md:w-16 lg:h-20 lg:w-20"
+          alt="logo"
+        />
+      </a>
 
-        <div class="flex">
-          <ul class="hidden items-center justify-between pt-1 lg:flex">
+      <div class="flex">
+        <ul class="hidden items-center justify-between pt-1 lg:flex">
 
-            <li class="border-white py-1 ml-8 hover:border-b">
-              <span
-                @click="$scroll('#about-us')"
-                class="block cursor-pointer font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
-                >Over ons</span
-              >
-            </li>
+          <li class="border-white py-1 ml-8 hover:border-b">
+            <span
+              @click="$scroll('#overons')"
+              class="block cursor-pointer font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+              >Over ons</span
+            >
+          </li>
 
-            <li class="border-white py-1 ml-8 hover:border-b">
-              <span
-                @click="$scroll('#advantages')"
-                class="block cursor-pointer font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
-                >Voordelen</span
-              >
-            </li>
+          <li class="border-white py-1 ml-8 hover:border-b">
+            <span
+              @click="$scroll('#advantages')"
+              class="block cursor-pointer font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+              >Voordelen</span
+            >
+          </li>
 
-            <li class="border-white py-1 ml-8 hover:border-b">
-              <a
-                href="/courses"
-                class="font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
-                >Vakken</a
-              >
-            </li>
+          <li class="border-white py-1 ml-8 hover:border-b">
+            <span
+              @click="$scroll('#aangeboden-vakken')"
+              class="block cursor-pointer font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+              >Vakken</span
+            >
+          </li>
 
-            <li class="border-white py-1 ml-8 hover:border-b">
-              <a
-                href="/blog"
-                class="font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
-                >Recencies</a
-              >
-            </li>
+          <li class="border-white py-1 ml-8 hover:border-b">
+            <span
+              @click="$scroll('#recensies')"
+              class="block cursor-pointer font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+              >Recensies</span
+            >
+          </li>
 
-            <li class="border-white py-1 ml-8 hover:border-b">
-              <a
-                href="/contact"
-                class="font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
-                >Contacteer ons</a
-              >
-            </li>
+          <li class="border-white py-1 ml-8 hover:border-b">
+            <span
+              @click="$scroll('#contacteer-ons')"
+              class="block cursor-pointer font-body text-base font-medium uppercase tracking-wide text-white transition duration-300 hover:text-purple"
+              >Contacteer ons</span
+            >
+          </li>
 
-          </ul>
+        </ul>
+        <div class="flex items-center">
+          <span class="lg:hidden" @click="mobileMenu = true">
+            <i class="bx bx-menu pr-1 text-2xl text-white md:text-3xl"></i>
+          </span>
 
-              </div>
-            </div>
+          <a
+            href="/search"
+            class="flex items-center pl-4"
+          >
+            <i
+              class="bx bx-search-alt text-white text-xl px-2"
+            ></i>
+          </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
 
 <div
-  class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-70 opacity-0 transition-opacity"
-  :class="{ 'pointer-events-auto !opacity-100' : mobileMenu }"
+class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-70 opacity-0 transition-opacity"
+:class="{ 'pointer-events-auto !opacity-100' : mobileMenu }"
 >
-  <div class="ml-auto min-h-screen w-2/3 bg-white sm:w-1/2">
-    <div class="flex justify-end p-8">
-      <span @click="mobileMenu = false">
-        <i class="bx bx-x text-3xl text-secondary"></i>
-      </span>
-    </div>
-    <ul class="px-8">
-
-      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
-        <a
-          href="/#about-us"
-          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
-          >About Us</a
-        >
-      </li>
-
-      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
-        <a
-          href="/#advantages"
-          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
-          >Advantages</a
-        >
-      </li>
-
-      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
-        <a
-          href="/courses"
-          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
-          >Courses</a
-        >
-      </li>
-
-      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
-        <a
-          href="/blog"
-          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
-          >Blog</a
-        >
-      </li>
-
-      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
-        <a
-          href="/contact"
-          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
-          >Contact</a
-        >
-      </li>
-
-      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
-        <a
-          href="/search"
-          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
-          >Search</a
-        >
-      </li>
-
-      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
-        <a
-          href="/single"
-          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
-          >Single page</a
-        >
-      </li>
-
-      <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
-        <a
-          href="/404.html"
-          class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
-          >404 Error</a
-        >
-      </li>
-
-    </ul>
+<div class="ml-auto min-h-screen w-2/3 bg-white sm:w-1/2">
+  <div class="flex justify-end p-8">
+    <span @click="mobileMenu = false">
+      <i class="bx bx-x text-3xl text-secondary"></i>
+    </span>
   </div>
+  <ul class="px-8">
+
+    <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+      <a
+        href="/#over-ons"
+        class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+        >Over ons</a
+      >
+    </li>
+
+    <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+      <a
+        href="/#advantages"
+        class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+        >Voordelen</a
+      >
+    </li>
+
+    <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+      <a
+        href="/#aangeboden-vakken"
+        class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+        >Vakken</a
+      >
+    </li>
+
+    <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+      <a
+        href="/blog"
+        class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+        >Recencies</a
+      >
+    </li>
+
+    <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+      <a
+        href="/contact"
+        class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+        >Contacteer ons</a
+      >
+    </li>
+
+    <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+      <a
+        href="/search"
+        class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+        >Search</a
+      >
+    </li>
+
+    <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+      <a
+        href="/single"
+        class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+        >Single page</a
+      >
+    </li>
+
+    <li class="mb-3 border-b border-neutrals-g02 py-1 pb-3">
+      <a
+        href="/404.html"
+        class="font-body text-base font-medium uppercase tracking-wide text-neutrals-g03"
+        >404 Error</a
+      >
+    </li>
+
+  </ul>
+</div>
 </div>
 
 
@@ -256,17 +283,24 @@
     <div
          class="container pt-32 sm:pt-44 md:pt-20 flex flex-col lg:flex-row justify-start lg:justify-between items-center">
         <div class="lg:w-2/5 text-center lg:text-left md:pt-10">
-            <h1
-                class="font-body font-medium text-white text-4xl lg:text-5xl xl:text-6xl tracking-tight">
-                Bijles op maat, <br /> van studenten voor studenten</h1>
-            <p
-               class="font-body font-light text-white text-lg lg:text-2xl xl:text-3xl tracking-wider leading-tight pt-5">
-                Wij zijn een jong bedrijf, opgericht door studenten, die kwalitatieve betaalbaare bijles willen aanbieden.</p>
-            <a href="/products"
-               class="py-4 md:py-5 px-8 lg:px-10 bg-white font-body font-medium text-secondary hover:text-purple text-base lg:text-xl tracking-wider uppercase rounded-full text-center inline-block mt-6 lg:mt-10 shadow-md hover:shadow transition duration-300 border border-white hover:border-purple">Bekijk de vakken die we aanbieden</a>
+        <br>
+        <br>
+            <h1 style="padding-bottom: 20px;" class="font-body font-medium text-white text-4xl lg:text-5xl xl:text-6xl tracking-tight">
+    Bijles op <strong>maat</strong>
+    <h1
+    class="font-body font-medium text-white text-4xl lg:text-5xl xl:text-6xl tracking-tight">
+Van <strong>studenten</strong> </br> voor <strong>studenten</strong></h1>
+
+<ul class="custom-list font-body font-light text-white text-lg lg:text-3xl xl:text-3xl tracking-wider leading-tight pt-20">
+  <li class="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl">  Kwalitatief</li>
+  <li class="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl">  Betaalbaar</li>
+  <li class="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl">  Gespecialiseerd</li>
+</ul>
+            <a href="#test-jump"
+               class="py-4 md:py-5 px-8 lg:px-10 bg-white font-body font-medium text-secondary hover:text-purple text-base lg:text-xl tracking-wider uppercase rounded-full text-center inline-block mt-6 lg:mt-10 shadow-md hover:shadow transition duration-300 border border-white hover:border-purple ">Bekijk de vakken die we aanbieden</a>
         </div>
-        <div class="w-full flex justify-end mt-10">
-    <img src="/assets/img/test_hero.png" alt="hero illustration" class="flex-grow">
+        <div class="w-full flex justify-end mt-5">
+    <img src="/assets/img/test_hero.png" alt="hero illustration">
 </div>
 
 
@@ -275,8 +309,8 @@
 
 <!-- Over ons -->
 
-<div class="relative overflow-hidden"
-     id="about-us">
+
+
     <div class="bg-top bg-cover bg-no-repeat w-80 h-80 absolute bottom-0 left-0 -ml-40 mb-12"
          style="background-image: url(/assets/img/about-ellipse.svg);"></div>
     <div class="bg-top bg-cover bg-no-repeat w-56 h-76 absolute top-0 right-0 -mr-28 md:mt-32 lg:mt-0"
@@ -284,17 +318,14 @@
     <div
          class="container pt-20 sm:pt-24 md:pt-16 lg:pt-24 sm:pb-16 lg:pb-24 flex flex-col lg:flex-row justify-between items-center z-20 relative">
         <div class="lg:w-2/5 text-center lg:text-left">
-            <h4
-                class="font-body font-medium text-primary text-base md:text-lg uppercase">
-                Ex-teachers turned entrepreneurs </h4>
             <h2
-                class="font-body font-bold text-neutrals-g03 text-3xl sm:text-4xl lg:text-5xl tracking-wider leading-tight">
+                class="font-body font-bold text-neutrals-g03 text-3xl sm:text-4xl lg:text-5xl tracking-wider leading-tight" id="over-ons">
                 Wij hebben een passie voor lesgeven</h2>
             <div class="pt-4 md:pt-6 flex justify-center lg:justify-start">
                 <img src="/assets/img/underline-blue.svg"
                      alt="underline">
             </div>
-            <p class="font-body text-neutrals-g03 text-sm leading-loose pt-10">
+            <p id = 'overons' class="font-body text-neutrals-g03 text-sm leading-loose pt-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit.
     <br /> <br />
 
@@ -306,23 +337,20 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
                  class="bg-primary w-84 h-72 sm:h-96 xl:h-100 mx-auto lg:mx-0 lg:ml-auto">
             </div>
             <div class="absolute right-0 top-0 bg-center bg-cover bg-no-repeat w-84 sm:w-120 xl:w-132 h-56 sm:h-80 xl:h-84 mt-8 mr-1 sm:mr-16 md:mr-32 lg:mr-8"
-                 style="background-image: url(/assets/img/blog-image-01.jpg);"></div>
+                 style="background-image: url(/assets/img/id_photo.jpg);"></div>
         </div>
     </div>
 </div>
 
 <!-- Digital Products -->
 
-<div class="relative overflow-hidden">
+<div class="relative overflow-hidden" id='aangeboden-vakken'>
     <div class="bg-figure bg-cover bg-top bg-no-repeat absolute top-0 left-0 -ml-140 lg:-ml-128 sm:mt-10 md:mt-20"
          style="background-image: url(/assets/img/product-bg-figure.svg);"></div>
     <div class="container pt-16 lg:pt-24 pb-24 lg:pb-40 z-20 relative">
         <div class="text-center w-full md:w-2/3 xl:w-1/2 mx-auto">
-            <h4
-                class="font-body font-medium text-primary text-base md:text-lg uppercase">
-                Browse our catalogue </h4>
             <h2
-                class="font-body font-bold text-neutrals-g03 text-3xl sm:text-4xl lg:text-5xl tracking-wider leading-tight">
+                class="font-body font-bold text-neutrals-g03 text-3xl sm:text-4xl lg:text-5xl tracking-wider leading-tight" id="test-jump">
                 Vakken waarvoor we bijles aanbieden </h2>
             <div class="pt-4 md:pt-6">
                 <img src="/assets/img/underline-blue.svg"
@@ -337,6 +365,7 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
   <a
     href="/product"
     class="group rounded-lg border border-neutrals-l02"
+    style="pointer-events: none;"
   >
     <span
       class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
@@ -354,7 +383,7 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
           Wiskunde voor economen Deel 1
         </h4>
         <span class="flex">
-        <p> test test test </p>
+        <p>B-KUL-D0T00A</p>
       <span
         class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
       >
@@ -377,6 +406,7 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
    <a
     href="/product"
     class="group rounded-lg border border-neutrals-l02"
+    style="pointer-events: none;"
   >
     <span
       class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
@@ -394,7 +424,7 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
           Wiskunde voor economen Deel 2
         </h4>
         <span class="flex">
-        <p> test test test </p>
+        <p>B-KUL-D0T00A</p>
       <span
         class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
       >
@@ -417,13 +447,14 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
    <a
     href="/product"
     class="group rounded-lg border border-neutrals-l02"
+    style="pointer-events: none;"
   >
     <span
       class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
     >
       <span
         class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
-        style="background-image: url(/assets/img/d1.jpg);"
+        style="background-image: url(/assets/img/wiskundeI.png);"
       ></span>
       <span
         class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
@@ -431,10 +462,10 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
         <h4
           class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
         >
-          Wiskunde voor economen Deel 1
+          Wiskunde I (6sp)
         </h4>
         <span class="flex">
-        <p> test test test </p>
+        <p>B-KUL-G0N02B </p>
       <span
         class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
       >
@@ -454,14 +485,51 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
     </span>
   </a>
 
+  <a
+   href="/product"
+   class="group rounded-lg border border-neutrals-l02"
+   style="pointer-events: none;"
+ >
+   <span
+     class="shadow-xs block transform rounded-lg transition duration-700 ease-in-out hover:scale-105 hover:shadow-md"
+   >
+     <span
+       class="block h-56 rounded-t-lg bg-cover bg-center bg-no-repeat sm:h-72 md:h-56 lg:h-48 xl:h-56"
+       style="background-image: url(/assets/img/wiskundeII.png);"
+     ></span>
+     <span
+       class="block border-b border-neutrals-g01 bg-white px-5 py-8 lg:px-3 xl:px-5"
+     >
+       <h4
+         class="block pb-2 font-body text-lg font-semibold text-neutrals-g03 group-hover:text-secondary lg:pb-3 xl:text-xl"
+       >
+         Wiskunde II (6sp/3sp)
+       </h4>
+       <span class="flex">
+       <p>B-KUL-G0O17D </p>
+     <span
+       class="flex items-center justify-between rounded-b-lg bg-white px-5 py-4 lg:px-3 xl:px-5"
+     >
+       <span class="flex items-center">
+         <span class="block font-body text-sm font-medium text-neutrals-g02"
+           >180 sales</span
+         >
+         <span class="flex items-center pl-3">
+           <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+           <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+           <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+           <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+           <i class="bx bxs-star pr-1 text-lg text-orange"></i>
+         </span>
+       </span>
+     </span>
+   </span>
+ </a>
+
+
 </div>
 
 
-        </div>
-        <div class="flex justify-center pt-16">
-            <a href="/courses"
-               class="bg-gradient-to-r from-primary via-secondary to-primary px-10 py-4 rounded-full font-body font-bold text-white hover:text-purple text-lg uppercase inline-block tracking-wide shadow hover:shadow-md transition duration-300">
-                VIEW ALL </a>
         </div>
     </div>
 </div>
@@ -475,9 +543,6 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
     </div>
     <div class="container pb-16 lg:pb-24 z-20 relative">
         <div class="text-center">
-            <h4
-                class="font-body font-medium text-primary text-base md:text-lg uppercase">
-                About Masterclass </h4>
             <h2
                 class="font-body font-bold text-neutrals-g03 text-3xl sm:text-4xl lg:text-5xl tracking-wider">
                 Waarom voor ons kiezen?</h2>
@@ -553,7 +618,7 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
 <!-- Blog -->
 
 <div
-     class="bg-neutrals-l01 pt-16 lg:pt-24 pb-36 lg:pb-48 relative overflow-hidden">
+     class="bg-neutrals-l01 pt-16 lg:pt-24 pb-36 lg:pb-48 relative overflow-hidden" id = 'recensies'>
     <div class="bg-cover bg-top bg-no-repeat w-76 lg:w-100 h-96 lg:h-100 xl:h-120 2xl:h-132 absolute top-0 left-0 -ml-40 sm:-ml-32 lg:-ml-48 xl:-ml-40 2xl:-ml-36"
          style="background-image: url(/assets/img/blog-figure.svg);"></div>
     <div class="bg-cover bg-center bg-no-repeat w-128 h-128 absolute bottom-0 md:top-0 right-0 -mr-56 md:mt-32 mb-72 md:mb-0"
@@ -608,56 +673,81 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
                 <div class="splide__track">
                     <ul class="splide__list">
 
-                        <li class="splide__slide">
-                            <div class="pb-6 md:pb-0 text-center md:text-left">
-                                <a href="/post"
-                                   class="bg-cover bg-center bg-no-repeat h-64 sm:h-80 md:h-48 lg:h-56 xl:h-64 block"
-                                   style="background-image: url(/assets/img/blog-image-01.jpg);"></a>
-                                <a href="/post"
-                                   class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Team work in the age of online learning</a>
-                                <p
-                                   class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet consectetur adipiscing elit. Scelerisque purus semper eget duis at tellus at urna.</p>
-                                <a href="/post"
-                                   class="inline-block mt-6 px-8 py-4 bg-white font-body text-neutrals-g03 hover:text-purple text-sm rounded-full shadow hover:shadow-md border border-primary hover:border-purple transition duration-300">
-                                    Read More
-                                </a>
-                            </div>
-                        </li>
+                      <li class="splide__slide">
+                          <div class="pb-6 md:pb-0 text-center md:text-left">
+                              <a class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Simon C.</a>
+                              <p class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
+                                Ik heb super veel geleerd van deze bijles, zeker een aanrader.
+                              </p>
+                          </div>
+                      </li>
 
-                        <li class="splide__slide">
-                            <div class="pb-6 md:pb-0 text-center md:text-left">
-                                <a href="/post"
-                                   class="bg-cover bg-center bg-no-repeat h-64 sm:h-80 md:h-48 lg:h-56 xl:h-64 block"
-                                   style="background-image: url(/assets/img/blog-image-02.jpg);"></a>
-                                <a href="/post"
-                                   class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Best education apps for the Mac</a>
-                                <p
-                                   class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet consectetur adipiscing elit. Scelerisque purus semper eget duis at tellus at urna.</p>
-                                <a href="/post"
-                                   class="inline-block mt-6 px-8 py-4 bg-white font-body text-neutrals-g03 hover:text-purple text-sm rounded-full shadow hover:shadow-md border border-primary hover:border-purple transition duration-300">
-                                    Read More
-                                </a>
-                            </div>
-                        </li>
 
-                        <li class="splide__slide">
-                            <div class="pb-6 md:pb-0 text-center md:text-left">
-                                <a href="/post"
-                                   class="bg-cover bg-center bg-no-repeat h-64 sm:h-80 md:h-48 lg:h-56 xl:h-64 block"
-                                   style="background-image: url(/assets/img/blog-image-03.jpg);"></a>
-                                <a href="/post"
-                                   class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">How to empower your child in the online education era</a>
-                                <p
-                                   class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet consectetur adipiscing elit. Scelerisque purus semper eget duis at tellus at urna.</p>
-                                <a href="/post"
-                                   class="inline-block mt-6 px-8 py-4 bg-white font-body text-neutrals-g03 hover:text-purple text-sm rounded-full shadow hover:shadow-md border border-primary hover:border-purple transition duration-300">
-                                    Read More
-                                </a>
-                            </div>
-                        </li>
+
+<li class="splide__slide">
+    <div class="pb-6 md:pb-0 text-center md:text-left">
+        <a class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Simon C.</a>
+        <p class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
+          Ik heb super veel geleerd van deze bijles, zeker een aanrader.
+        </p>
+    </div>
+</li>
+
+
+
+
+
+
+<li class="splide__slide">
+    <div class="pb-6 md:pb-0 text-center md:text-left">
+        <a class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Thomas D.</a>
+        <p class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
+          Ik heb super veel geleerd van deze bijles, zeker een aanrader.
+        </p>
+    </div>
+</li>
+
+
+<li class="splide__slide">
+    <div class="pb-6 md:pb-0 text-center md:text-left">
+        <a class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Kei Y.</a>
+        <p class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
+          Ik heb super veel geleerd van deze bijles, zeker een aanrader.
+        </p>
+    </div>
+</li>
+
+
+<li class="splide__slide">
+    <div class="pb-6 md:pb-0 text-center md:text-left">
+        <a class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Thibault L.</a>
+        <p class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
+          Ik heb super veel geleerd van deze bijles, zeker een aanrader.
+        </p>
+    </div>
+</li>
+
+<li class="splide__slide">
+    <div class="pb-6 md:pb-0 text-center md:text-left">
+        <a class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Simon C.</a>
+        <p class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
+          Ik heb super veel geleerd van deze bijles, zeker een aanrader.
+        </p>
+    </div>
+</li>
+
+<li class="splide__slide">
+    <div class="pb-6 md:pb-0 text-center md:text-left">
+        <a class="font-body font-medium text-neutrals-g03 hover:text-purple transition duration-300 text-xl tracking-wide block pt-6">Simon C.</a>
+        <p class="font-body text-neutrals-g03 text-sm pt-3 lg:pt-5">
+          Ik heb super veel geleerd van deze bijles, zeker een aanrader.
+        </p>
+    </div>
+</li>
+
+
+
+
 
                     </ul>
                 </div>
@@ -666,6 +756,61 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
         </div>
     </div>
 </div>
+
+<!-- Prijzen -->
+
+
+
+    <div class="bg-top bg-cover bg-no-repeat w-80 h-80 absolute bottom-0 left-0 -ml-40 mb-12"
+         style="background-image: url(/assets/img/about-ellipse.svg);"></div>
+    <div class="bg-top bg-cover bg-no-repeat w-56 h-76 absolute top-0 right-0 -mr-28 md:mt-32 lg:mt-0"
+         style="background-image: url(/assets/img/about-figure.svg);"></div>
+    <div
+         class="container pt-20 sm:pt-24 md:pt-16 lg:pt-24 sm:pb-16 lg:pb-24 flex flex-col lg:flex-row justify-between items-center z-20 relative">
+        <div class="lg:w-2/5 text-center lg:text-left">
+            <h2
+                class="font-body font-bold text-neutrals-g03 text-3xl sm:text-4xl lg:text-5xl tracking-wider leading-tight">
+                Onze prijzen</h2>
+            <div class="pt-4 md:pt-6 flex justify-center lg:justify-start">
+                <img src="/assets/img/underline-blue.svg"
+                     alt="underline">
+            </div>
+            <p class="font-body text-neutrals-g03 text-sm leading-loose pt-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit.
+    <br /> <br />
+
+Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus urna et pharetra. Erat nam at lectus urna duis convallis. Pellentesque habitant morbi tristique senectus et netus. Lorem mollis aliquam ut porttitor leo a diam sollicitudin.
+ </p>
+        </div>
+        <div class="w-full lg:w-1/2 relative mt-16">
+            <div
+                 class="bg-primary w-84 h-72 sm:h-96 xl:h-100 mx-auto lg:mx-0 lg:ml-auto">
+            </div>
+            <div class="absolute right-0 top-0 bg-center bg-cover bg-no-repeat w-84 sm:w-120 xl:w-132 h-56 sm:h-80 xl:h-84 mt-8 mr-1 sm:mr-16 md:mr-32 lg:mr-8"
+                 style="background-image: url(/assets/img/id_photo.jpg);"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact -->
+<div id = 'contacteer-ons' class="container pt-20 sm:pt-24 md:pt-16 lg:pt-24 sm:pb-16 lg:pb-24 flex flex-col lg:flex-row justify-center items-center z-20 relative">
+    <div class="lg:w-2/5 text-center">
+        <h2 class="font-body font-bold text-neutrals-g03 text-3xl sm:text-4xl lg:text-5xl tracking-wider leading-tight">Contacteer ons !</h2>
+        <div class="pt-4 md:pt-6 flex justify-center">
+            <!-- Image related to underline -->
+            <!-- <img src="/assets/img/underline-blue.svg" alt="underline" /> -->
+        </div>
+        <p class="font-body text-neutrals-g03 text-sm leading-loose pt-10">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit.
+            <br /> <br />
+
+            Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus urna et pharetra. Erat nam at lectus urna duis convallis. Pellentesque habitant morbi tristique senectus et netus. Lorem mollis aliquam ut porttitor leo a diam sollicitudin.
+        </p>
+    </div>
+</div>
+
+
+
 </div>
       <div
   class="bg-cta relative h-24 w-full bg-cover bg-bottom bg-no-repeat md:h-20 xl:h-32 2xl:h-20"
@@ -680,10 +825,9 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
     <div class="block lg:hidden">
       <a href="/" class="mb-10 block">
         <img
-          src="/assets/img/logo.svg"
-          class="relative -left-3 mx-auto xl:h-24"
-          alt="logo"
-        />
+  src="/assets/img/logo2.png"
+  alt="logo"
+  width="60%"/>
       </a>
     </div>
     <div class="text-center lg:w-1/3 lg:text-left">
@@ -727,18 +871,16 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
     </div>
     <div class="hidden items-center lg:flex">
       <a href="/" class="-ml-16 block">
-        <img
-          src="/assets/img/logo.svg"
-          class="xl:h-24"
-          alt="logo"
-        />
-      </a>
+        <div style="text-align: center;">
+  <img src="/assets/img/logo2.png" alt="logo" width="30%" />
+</div>
+
     </div>
     <div
       class="mx-auto w-3/4 pt-8 text-center md:w-11/12 lg:mx-0 lg:w-1/3 lg:pl-8 lg:pt-0 lg:text-left"
     >
       <span class="font-body text-lg font-semibold text-white"
-        >Contactacteer ons</span
+        >Contacteer ons</span
       >
       <div class="flex justify-center py-3 lg:justify-start">
         <img
@@ -754,16 +896,16 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
           class="flex pt-2 opacity-100 transition duration-300 hover:opacity-75"
         >
           <i
-            class="bx bxs-phone text-white text-xl pr-4"
+            class=" text-white text-xl pr-4"
           ></i>
           <p
             class="text-left font-body text-sm font-medium leading-relaxed tracking-wide text-white"
           >
-            +1 (366) 876-3656
+            BE0804.929.853
           </p>
         </a>
         <a
-          href="mailto:info@online-course.com"
+          href="mailto:info@topgrades.be"
           class="flex items-center pt-3 opacity-100 transition duration-300 hover:opacity-75"
         >
           <i
@@ -785,6 +927,7 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
   >
     <ul class="flex flex-col items-center sm:flex-row">
 
+      <!--
       <li class="pb-3 sm:pr-8 sm:pb-0">
         <a
           href="/single"
@@ -792,7 +935,9 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
           >Privacy Policy</a
         >
       </li>
+    -->
 
+      <!--
       <li class="pb-3 sm:pr-8 sm:pb-0">
         <a
           href="/single"
@@ -800,6 +945,7 @@ Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Sed tempus ur
           >Terms & Conditions</a
         >
       </li>
+    -->
 
     </ul>
     <div class="pt-4 sm:pt-0">
